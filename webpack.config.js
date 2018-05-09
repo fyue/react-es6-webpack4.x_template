@@ -17,13 +17,29 @@ module.exports = {
                 test: /(\.jsx|\.js)$/,
                 use: {
                     loader: "babel-loader",
-                    options: {
-                        presets: [
-                            "env", "react"
-                        ]
-                    }
                 },
                 exclude: /node_modules/
+            },
+            {
+                test: /(\.jsx|\.js)$/,
+                use: {
+                    loader: "babel-loader"
+                },
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    }, {
+                        loader: "css-loader",
+                        options: {
+                            modules: true, // 指定启用css modules
+                            localIdentName: '[name]-[local]-[hash:base64:5]' // 指定css的类名格式
+                        }
+                    }
+                ]
             }
         ]
     },
