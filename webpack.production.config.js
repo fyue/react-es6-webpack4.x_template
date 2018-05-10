@@ -33,7 +33,7 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader // 必须放在第一个地方，在css-loader之前
+                        loader: MiniCssExtractPlugin.loader
                     },
                     {
                         loader: "css-loader",

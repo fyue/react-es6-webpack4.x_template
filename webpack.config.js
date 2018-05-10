@@ -19,27 +19,28 @@ module.exports = {
             {
                 test: /(\.jsx|\.js)$/,
                 use: {
-                    loader: "babel-loader",
-                },
-                exclude: /node_modules/
-            },
-            {
-                test: /(\.jsx|\.js)$/,
-                use: {
                     loader: "babel-loader"
                 },
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
+                test: /(\.css|\.sass|\.less)$/,
                 use: [
                     {
                         loader: "style-loader"
-                    }, {
+                    },
+                    {
                         loader: "css-loader",
                         options: {
-                            modules: true, // 指定启用css modules
+                            modules: true, // 指定启用css modules(支持比如@import语法)
+                            importLoaders: 1,
                             localIdentName: '[name]-[local]-[hash:base64:5]' // 指定css的类名格式
+                        }
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            sourceMap: true,
                         }
                     }
                 ]
