@@ -110,3 +110,34 @@ export function removeEvent(el, event, handler) {
         el['on' + event] = null;
     }
 }
+
+function setStyle(target, name, value) {
+    target.style[name] = value;
+}
+
+/**
+ * @param target:
+ * @returns {*}
+ */
+function getElement(target) {
+    if (!target) throw "target is undefined, can't tween!!!";
+
+    if (typeof target === 'string') {
+        return (typeof(document) === 'undefined') ? target : (document.querySelectorAll ? document.querySelectorAll(target) : document.getElementById((target.charAt(0) === '#') ? target.substr(1) : target));
+    } else {
+        return target;
+    }
+}
+
+/**
+ * 60fps定时器
+ * @type {((callback: FrameRequestCallback) => number) | * | Function}
+ */
+const requestFrame = window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.oRequestAnimationFrame ||
+    window.msRequestAnimationFrame ||
+    function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+    };
