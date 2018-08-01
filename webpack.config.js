@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry:  __dirname + "/app/main.js",//已多次提及的唯一入口文件
+    entry:  __dirname + "/app/index.js",//已多次提及的唯一入口文件
     output: {
         path: __dirname + "/build",//打包后的文件存放的地方
     },
@@ -15,6 +15,15 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(png|jpg|gif|woff|ttf|svg|eot)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
+                ]
+            },
             {
                 test: /(\.jsx|\.js)$/,
                 use: {

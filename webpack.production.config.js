@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: __dirname + "/app/main.js",//已多次提及的唯一入口文件
+    entry: __dirname + "/app/index.js",//已多次提及的唯一入口文件
     output: {
         path: __dirname + "/build",
         filename: "index.min.js"
@@ -12,6 +12,18 @@ module.exports = {
     mode: 'production',
     module: {
         rules: [
+            {
+                test: /\.(png|jpg|gif|woff|ttf|svg|eot)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]',
+                            outputPath: 'images/'
+                        }
+                    }
+                ]
+            },
             {
                 test: /(\.jsx|\.js)$/,
                 use: {
