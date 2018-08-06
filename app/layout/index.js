@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import css from './index.less';
-import Test from './test';
 
 export default class Layout extends Component {
     render() {
@@ -9,7 +8,7 @@ export default class Layout extends Component {
         };
         return (
             <div {...props}>
-                <Test />
+                Hello!
             </div>
         );
     }
