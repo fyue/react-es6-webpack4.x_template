@@ -88,7 +88,6 @@ module.exports = {
 
         new ExtractTextPlugin({filename: '[name].min.css', allChunks: true}),
 
-
         // 分离css和js文件
         // new MiniCssExtractPlugin({
         //     // Options similar to the same options in webpackOptions.output
