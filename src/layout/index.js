@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import css from './index.less';
+import {DatePicker } from 'antd';
 
 export default class Layout extends Component {
 
@@ -11,6 +12,7 @@ export default class Layout extends Component {
         return (
             <div {...props}>
                 Hello!
+                <DatePicker/>
             </div>
         );
     }
