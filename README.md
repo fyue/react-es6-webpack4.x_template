@@ -9,3 +9,5 @@
 4.style-loader将所有的计算后的样式加入页面中，二者组合在一起使你能够把样式表嵌入webpack打包后的JS文件中。
 
 5.babel-plugin-import 目前用于在.babelrc中自动引入antd的样式文件
+
+6.使用stage-2，需要安装babel插件babel-preset-stage-2

@@ -510,4 +510,21 @@ export default class Utils {
     }
     return newArr;
   }
+
+  static getDataFromFile(file) {
+    return new Promise(resolve => {
+
+        //创建读取文件的对象
+        var reader = new FileReader();
+    
+        //为文件读取成功设置事件
+        reader.onload=function(e) {
+            const rlt = e.target.result;
+            resolve(rlt);
+        };
+    
+        //正式读取文件
+        reader.readAsDataURL(file);
+    })
+}
 }
