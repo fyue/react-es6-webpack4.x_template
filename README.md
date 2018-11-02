@@ -11,3 +11,11 @@
 5.babel-plugin-import 目前用于在.babelrc中自动引入antd的样式文件
 
 6.使用stage-2，需要安装babel插件babel-preset-stage-2
+
+7.publicPath 用于当html与其他文件不再同一目录下的情况，设置了publicPath后，出index.html外的其他文件都应该放在publicPath指定的路径下
+
+8.webpack中的devServer配置对象：
+
+告诉服务器对于静态文件的基服务器路径
+如访问静态资源时的http://localhost:port/即指向该地址
+contentBase: path.join(__dirname, 'local_server_static'), 

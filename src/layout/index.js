@@ -3,6 +3,12 @@ import css from './index.less';
 import {DatePicker, Upload, Button } from 'antd';
 import { resolve } from 'upath';
 
+import img from '../assets/foo.jpg';
+
+{
+    console.log('url:', img);
+}
+
 function getDataFromFile(file) {
     return new Promise(resolve => {
 
@@ -62,6 +68,7 @@ export default class Layout extends Component {
                 <div>
                     <img src={this.state.picUrl} />
                 </div>
+                <div><img src={img}/></div>
             </div>
         );
     }

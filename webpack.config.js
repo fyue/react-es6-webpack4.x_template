@@ -3,20 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry:  __dirname + "/src/index.js",//已多次提及的唯一入口文件
+    entry:  {
+        main: __dirname + "/src/index.js",//已多次提及的唯一入口文件
+    },
     output: {
         path: __dirname + "/build",//打包后的文件存放的地方
-        filename:"[name].js", // 默认main
+        filename:"main.js", // 默认main
         chunkFilename: '[name].[chunkhash:5].min.js',
+
     },
     mode: 'development',
     devtool: 'source-map',
-    devServer: {
-        contentBase: path.join(__dirname, 'local_server'), //本地服务器所加载的页面所在的目录
-        historyApiFallback: true, //不跳转
-        port: 9001,
-        // host: "192.168.1.114",   //填写你自己的IP地址
-    },
     module: {
         rules: [
             {

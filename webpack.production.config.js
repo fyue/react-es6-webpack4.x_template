@@ -7,7 +7,7 @@ module.exports = {
     entry: __dirname + "/src/index.js",//已多次提及的唯一入口文件
     output: {
         path: __dirname + "/build",
-        filename: "index.min.js"
+        filename: "index.min.js",
     },
     mode: 'production',
     module: {
