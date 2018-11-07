@@ -10,7 +10,6 @@ module.exports = {
         path: __dirname + "/build",//打包后的文件存放的地方
         filename:"main.js", // 默认main
         chunkFilename: '[name].[chunkhash:5].min.js',
-
     },
     mode: 'development',
     devtool: 'source-map',
