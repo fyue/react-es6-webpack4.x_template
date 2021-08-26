@@ -1,0 +1,61 @@
+@topLamp1: '../wawaji/images/lamp/topLamp1.png';
+@topLamp2: '../wawaji/images/lamp/topLamp2.png';
+
+@asideLampIn: '../wawaji/images/asideLamp/asideLampIn.png';
+@asideLampOut: '../wawaji/images/asideLamp/asideLampOut.png';
+
+@keyframes horseRaceLamp {
+  0%{
+    background-image: url(@topLamp1);
+  }
+  50% {
+    background-image: url(@topLamp2);
+  }
+  100%{
+    background-image: url(@topLamp1);
+  }
+}
+.topLamp {
+  position: absolute;
+  width: 910px;
+  height: 247px;
+  left: 85px;
+  top: 55px;
+  //background-image: url(@topLamp1);
+  animation-name: horseRaceLamp;
+  animation-duration: 1000ms;
+  animation-timing-function: steps(1);
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes breathingLamp {
+  0%{
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.asideLamp {
+  position: absolute;
+  top: 35px;
+  width: 40px;
+  height: 1350px;
+  background-image: url(@asideLampIn);
+  animation: breathingLamp ease-in-out 2000ms infinite;
+}
+.leftAsideLamp {
+  left: 5px;
+}
+.rightAsideLamp {
+  right: 5px;
+}
+
+canvas {
+  width: 1080px;
+  height: 1920px;
+}
